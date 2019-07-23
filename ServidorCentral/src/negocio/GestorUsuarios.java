@@ -51,7 +51,7 @@ public class GestorUsuarios {
     public void registarUsuarios (String login,String Password,String nombreCompleto) throws SQLException, ClassNotFoundException
     {
         conector.conectarse();
-        conector.crearConsulta("INSERT INTO USUARIO("+login+","+Password+","+nombreCompleto+")");
+        conector.actualizar("INSERT INTO USUARIO("+login+","+Password+","+nombreCompleto+")");
         conector.desconectarse();
     }
     

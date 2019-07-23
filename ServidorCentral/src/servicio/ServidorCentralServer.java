@@ -21,6 +21,8 @@ import negocio.Cliente;
 import negocio.GestorClientes;
 import negocio.GestorUsuarios;
 import negocio.Funcionario;
+import negocio.GestorPaquetes;
+import negocio.GestorVentas;
 
 /**
  *Servidor central de la agencia de viajes
@@ -30,6 +32,8 @@ public class ServidorCentralServer implements Runnable{
     
     private final GestorClientes gesClientes;
     private final GestorUsuarios gesUsuarios;
+    private final GestorVentas gesVentas;
+    private final GestorPaquetes gesPaquetes;
     
     
     private static ServerSocket ssocket;
@@ -45,6 +49,8 @@ public class ServidorCentralServer implements Runnable{
     public ServidorCentralServer() {
         this.gesClientes = new GestorClientes();
         this.gesUsuarios = new GestorUsuarios();
+        this.gesVentas = new GestorVentas();
+        this.gesPaquetes = new GestorPaquetes();
     }
     /**
      * Logica completa del servidor
@@ -174,7 +180,18 @@ public class ServidorCentralServer implements Runnable{
             case "registrarUsuario":
                 gesUsuarios.registarUsuarios(parametros[1], parametros[2], parametros[3]);
                 salidaDecorada.println("Exito");
-                
+                break;
+             
+            case "agregarVenta":
+                gesVentas.agregarVenta(parametros[1], parametros[2], parametros[3]);
+                salidaDecorada.println("Exito");
+                break;
+            case "agregarPaquetePersonalizado":  
+                gesPaquetes.agregarPaquetePersonalizado(parametros[1], parametros[2], parametros[3], parametros[4], parametros[5], parametros[6], parametros[7], parametros[8]);
+                break;
+            case "agregarPaqueteTodoIncluido": 
+                gesPaquetes.agregarPaqueteTodoIncluido(parametros[1], parametros[2], parametros[3], parametros[4], parametros[5], parametros[6]);
+                break;
                 
         }
     }
