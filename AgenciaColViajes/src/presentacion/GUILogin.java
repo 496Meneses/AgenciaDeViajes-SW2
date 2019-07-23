@@ -163,7 +163,8 @@ public class GUILogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jBRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegistrarseActionPerformed
- 
+            GUIRegistrarUsuario rUsuario = new GUIRegistrarUsuario();
+            rUsuario.setVisible(true);
     }//GEN-LAST:event_jBRegistrarseActionPerformed
 
     /**

@@ -115,7 +115,7 @@ public class ServidorCentralSocket implements ServidorCentral{
     
     @Override
     public boolean agregarVenta(String idVenta, String idCliente,String idPaquete) {
-         String respuesta = consultarServicio("agregarVenta,"+idVenta+","+idCliente+","+idPaquete+",");
+         String respuesta = consultarServicio("agregarVenta,"+idVenta+","+idCliente+","+idPaquete);
         return respuesta.equals("Exito");
     }
 
@@ -124,5 +124,16 @@ public class ServidorCentralSocket implements ServidorCentral{
         String respuesta = consultarServicio ("registrarUsuario,"+login+","+password+","+nombreCompleto);
         return respuesta.equals("Exito");
     }
+
+    @Override
+    public boolean agregarPaquetePersonalizado(String id, String region, String ciudad, String vuelos, String horaSalida, String horallegada, String valorVuelos, String valorHoteles) {
+        String respuesta = consultarServicio ("agregarPaquetePersonalizado,"+id+","+region+","+ciudad+","+vuelos+","+horaSalida+","+horallegada+","+valorVuelos+","+valorHoteles);
+        return respuesta.equals("Exito");
+    }
+
+    @Override
+    public boolean agregarPaqueteTodoIncluido(String id, String nombre, String fechaLLegada, String fechaSalida, String descripcion, String Costo) {
+        String respuesta = consultarServicio ("agregarPaqueteTodoIncluido,"+id+","+nombre+","+fechaLLegada+","+fechaSalida+","+descripcion+","+Costo); // Falta fotos no se si se guardan en la base de datos;
+        return respuesta.equals("Exito");    }
 
 }

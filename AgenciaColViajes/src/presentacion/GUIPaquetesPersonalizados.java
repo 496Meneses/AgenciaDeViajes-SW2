@@ -1,5 +1,7 @@
 package presentacion;
 
+import acceso.ServidorCentral;
+import acceso.ServidorCentralSocket;
 import utilidades.Utilidades;
 import java.util.Date;
 import javax.swing.DefaultListModel;
@@ -309,7 +311,18 @@ public class GUIPaquetesPersonalizados extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    
+    private void registrarPaquetesPersonalizados(){
+    }
     private void btnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrabarActionPerformed
+        if (tblPaquetes.getSelectedRow() == -1) {   
+            Utilidades.mensajeAdvertencia("Debe seleccionar una fila de la tabla paquetes", "Atención");
+            return;
+        }
+
+
+
+
     }//GEN-LAST:event_btnGrabarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

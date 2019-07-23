@@ -67,4 +67,8 @@ public interface ServidorCentral {
      * @return true en caso de exito
      */ 
     public boolean registrarUsuario(String login,String password,String nombreCompleto);
+    
+    public boolean agregarPaquetePersonalizado(String id,String region,String ciudad,String vuelos,String horaSalida,String horallegada,String valorVuelos,String valorHoteles);
+    
+    public boolean agregarPaqueteTodoIncluido(String id,String nombre,String fechaLLegada,String fechaSalida,String descripcion, String Costo);
 }

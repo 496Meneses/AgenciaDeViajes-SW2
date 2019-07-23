@@ -44,6 +44,9 @@ public class GUIRegistrarUsuario extends javax.swing.JFrame {
         jBtRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(111, 111, 235));
+        setForeground(java.awt.Color.white);
 
         jTextNombreCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +150,8 @@ public class GUIRegistrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextUserActionPerformed
 
     private void jBtRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtRegistrarActionPerformed
-        registrarUsuario();   
+        registrarUsuario();
+        this.setVisible(false);
     }//GEN-LAST:event_jBtRegistrarActionPerformed
 
     
